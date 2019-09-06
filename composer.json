@@ -1,0 +1,36 @@
+{
+  "repositories": [
+    { "type": "git", "url": "https://github.com/josephlinden/typo3-code-coverage-bug-ext.git" }
+  ],
+  "name": "josephlinden/typo3-code-coverage-bug",
+  "description": "A minimum example to exhibit weird behavior when generating code coverage reports",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": "^7.1",
+    "typo3/cms": "8.7.27",
+    "josephlinden/typo3-code-coverage-bug-ext": "dev-master"
+  },
+  "require-dev": {
+    "nimut/testing-framework": "4.x-dev",
+    "phpunit/phpunit": "^7.1",
+    "squizlabs/php_codesniffer": "3.*",
+    "sebastian/phpcpd": "*",
+    "phpmd/phpmd" : "@stable"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "JosephLinden\\Typo3CodeCoverageBugExt\\Tests\\": "html/typo3conf/ext/typo3_code_coverage_bug_ext/Tests/"
+    }
+  },
+  "extra": {
+    "typo3/cms": {
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": "html"
+    }
+  },
+  "scripts": {
+    "run-unit-tests": "php ./vendor/phpunit/phpunit/phpunit -c UnitTests.xml --coverage-html testCoverage/Unit",
+    "run-functional-tests": "php ./vendor/phpunit/phpunit/phpunit -c FunctionalTests.xml --coverage-html testCoverage/Functional"
+  }
+}

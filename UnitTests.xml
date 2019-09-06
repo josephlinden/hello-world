@@ -1,0 +1,25 @@
+<phpunit
+    backupGlobals="true"
+    backupStaticAttributes="false"
+    bootstrap="vendor/nimut/testing-framework/res/Configuration/UnitTestsBootstrap.php"
+    colors="true"
+    convertErrorsToExceptions="true"
+    convertWarningsToExceptions="true"
+    forceCoversAnnotation="false"
+    processIsolation="false"
+    stopOnError="false"
+    stopOnFailure="false"
+    stopOnIncomplete="false"
+    stopOnSkipped="false"
+    verbose="false">
+    <testsuites>
+        <testsuite name="Unit Test Suite">
+            <directory suffix=".php">html/typo3conf/ext/typo3_code_coverage_bug_ext/Tests/Unit/</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">html/typo3conf/ext/typo3_code_coverage_bug_ext/Classes/</directory>
+        </whitelist>
+    </filter>
+</phpunit>
